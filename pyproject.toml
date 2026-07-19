@@ -1,0 +1,30 @@
+# Cấu hình công cụ cho dự án Luna (black · ruff · pytest)
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+    ".venv", ".venv-tts", "__pycache__",
+    "data", "checkpoints", "voices", "logs",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]      # độ dài dòng đã do black lo
+
+[tool.ruff.lint.per-file-ignores]
+# Test dùng pytest.importorskip("torch") -> bắt buộc phải chạy TRƯỚC khi import luna.*
+"tests/*" = ["E402"]
+# Script phải sys.path.insert(src) TRƯỚC khi import luna.*
+"scripts/*" = ["E402"]
+
+[tool.pytest.ini_options]
+# QUAN TRỌNG: chỉ chạy test trong tests/.
+# Không có dòng này pytest sẽ quét cả scripts/ và chạy nhầm các file tiện ích
+# thủ công (test_mic.py, test_stt.py...) — chúng đòi nhấn Enter nên treo/lỗi.
+testpaths = ["tests"]
+addopts = "-q"

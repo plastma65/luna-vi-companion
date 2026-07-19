@@ -1,0 +1,57 @@
+# =====================================================================
+#  Thư viện cho Luna — CÀI TẤT CẢ TRONG MỘT MÔI TRƯỜNG (.venv)
+#
+#  Từ bản này Luna không còn dùng server TTS riêng, nên KHÔNG cần .venv-tts.
+#
+#  CÀI ĐẶT (Windows, Python 3.11):
+#    python -m venv .venv
+#    .\.venv\Scripts\Activate.ps1
+#    pip install --upgrade pip
+#    # 1) PyTorch bản CUDA — PHẢI cài trước và đúng lệnh này (không dùng pip thường):
+#    pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+#    # 2) Phần còn lại:
+#    pip install -r requirements.txt
+#    # 3) Kiểm tra không có xung đột:
+#    pip check
+# =====================================================================
+
+# ---------- Lõi ----------
+numpy>=1.26,<2.2
+tqdm>=4.66
+
+# ---------- Model ngôn ngữ (Qwen + QLoRA) ----------
+# !!! GHIM QUAN TRỌNG !!!
+# transformers phải nằm trong khoảng [4.57, 5.0):
+#   - < 4.57 : coqui-tts (viXTTS) không chạy
+#   - >= 5.0 : bỏ hàm isin_mps_friendly -> coqui-tts crash khi import
+# Đây là xung đột thật đã gặp; đừng nâng lên 5.x nếu còn dùng giọng viXTTS.
+transformers>=4.57,<5
+datasets>=2.20
+peft>=0.12                # LoRA / QLoRA
+bitsandbytes>=0.43        # nén 4-bit cho vừa VRAM 12GB
+accelerate>=0.33
+trl>=0.9                  # SFTTrainer
+
+# ---------- Giọng nói ----------
+sounddevice>=0.4          # thu mic / phát loa
+soundfile>=0.12
+faster-whisper>=1.0       # STT: nói -> chữ
+coqui-tts>=0.24           # TTS: viXTTS, chạy trong tiến trình (không cần server)
+# torchaudio: cài kèm torch ở bước 1 (phải KHỚP phiên bản torch, nếu không hỏng CUDA)
+
+# ---------- RAG (tra cứu tài liệu an ninh mạng) ----------
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+pypdf>=4.0
+
+# ---------- Giao diện orb (Jarvis) ----------
+PySide6>=6.6
+
+# ---------- Kiểm thử & chất lượng code ----------
+pytest>=8.0
+ruff>=0.5
+black>=24.0
+
+# ---------- Giai đoạn sau (bỏ comment khi cần) ----------
+# discord.py>=2.4
+# google-api-python-client>=2.140

@@ -1,0 +1,63 @@
+# =====================================================================
+#  .gitignore — QUYẾT ĐỊNH FILE NÀO ĐƯỢC LÊN GITHUB
+#  Nguyên tắc: chỉ đưa MÃ NGUỒN + TÀI LIỆU. Không đưa dữ liệu cá nhân,
+#  model nặng, hay tài liệu bản quyền của bên thứ ba.
+# =====================================================================
+
+# --- Môi trường ảo (bắt cả .venv, .venv-tts, .venv-cũ...) ---
+.venv*/
+env/
+__pycache__/
+*.pyc
+
+# --- BÍ MẬT: tuyệt đối không commit ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+token.json
+
+# --- DỮ LIỆU CÁ NHÂN: trí nhớ + nhật ký hội thoại của Luna ---
+# facts.json chứa thông tin đời tư (tên, sở thích, công việc...) — KHÔNG chia sẻ.
+data/memory/
+
+# --- KHO TRI THỨC RAG: tài liệu bên thứ ba + chỉ mục (nặng) ---
+# Người dùng tự tải bằng: python scripts/fetch_knowledge.py
+data/knowledge/
+data/rag_index/
+
+# --- DỮ LIỆU TRAIN ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+# NGOẠI LỆ: giữ lại bộ dữ liệu tính cách Luna để người khác train được
+!data/processed/luna_persona.jsonl
+!data/processed/luna_persona_seed.jsonl
+
+# --- MODEL & TRỌNG SỐ (rất nặng: checkpoints ~1.4GB, voices ~1.9GB) ---
+checkpoints/
+voices/
+*.pt
+*.bin
+*.safetensors
+*.gguf
+*.onnx
+*.wav
+*.pth
+
+# --- Log & cache ---
+logs/
+*.log
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
