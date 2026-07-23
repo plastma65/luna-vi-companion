@@ -130,6 +130,10 @@ rồi chạy lại `build_index.py`.
 
 Dừng Luna đang chạy ẩn: bấm đúp **`Luna_Stop.vbs`**.
 
+Sao lưu code lên GitHub (nếu bạn fork và chỉnh sửa): bấm đúp **`Luna_Backup.bat`** —
+nó tự commit + push. Ký ức riêng (`data/memory/`) đã bị `.gitignore` chặn nên không
+bao giờ bị đẩy lên.
+
 ### Nói chuyện với Luna
 
 - Nói tự nhiên, im lặng ~3 giây là Luna trả lời.

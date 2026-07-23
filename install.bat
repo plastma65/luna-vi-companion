@@ -100,7 +100,7 @@ if exist "checkpoints\luna_lora\adapter_config.json" (
 
 echo.
 echo   ============================================================
-echo         ??? CAI DAT XONG! Luna da san sang.
+echo         CAI DAT XONG! Luna da san sang.
 echo   ============================================================
 echo.
 echo   Cach chay:
