@@ -8,7 +8,7 @@ cd /d "%~dp0"
 echo Mo orb overlay...
 start "" "%~dp0.venv\Scripts\pythonw.exe" "%~dp0scripts\overlay.py" --nodemo
 
-REM LUU Y: khong dung dau ">" trong lenh echo — CMD hieu la ghi ra file!
+REM LUU Y: khong dung dau ">" trong lenh echo ??? CMD hieu la ghi ra file!
 echo Khoi dong Luna: go chu, Luna tra loi bang giong noi...
 echo.
 call .venv\Scripts\activate.bat

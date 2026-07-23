@@ -6,7 +6,7 @@ REM  Muon co orb: dung Luna_Jarvis.bat
 REM ================================================================
 cd /d "%~dp0"
 
-REM LUU Y: khong dung dau ">" trong lenh echo — CMD hieu la ghi ra file!
+REM LUU Y: khong dung dau ">" trong lenh echo ??? CMD hieu la ghi ra file!
 echo Khoi dong Luna: nghe mic, tra loi bang giong noi...
 echo.
 call .venv\Scripts\activate.bat

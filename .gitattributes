@@ -1,0 +1,25 @@
+# Ép kiểu xuống dòng theo từng loại file, tránh lỗi "batch chạy sai" khi
+# file .bat bị lưu kiểu LF (Unix) trên máy Windows.
+
+# Mac dinh: git tu chuan hoa text
+* text=auto
+
+# Windows script -> BAT BUOC CRLF (neu la LF, CMD doc sai -> loi)
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.vbs  text eol=crlf
+*.ps1  text eol=crlf
+
+# Ma nguon / tai lieu -> LF cho gon, dong nhat
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.iss  text eol=crlf
+
+# File nhi phan -> khong dung cham vao
+*.onnx binary
+*.wav  binary
+*.pt   binary
+*.safetensors binary
