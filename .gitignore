@@ -48,6 +48,10 @@ voices/
 *.wav
 *.pth
 
+# --- Bộ cài build ra (nặng, tải qua GitHub Releases thay vì commit) ---
+installer/Output/
+*.exe
+
 # --- Log & cache ---
 logs/
 *.log

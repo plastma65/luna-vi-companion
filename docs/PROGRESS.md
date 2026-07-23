@@ -46,7 +46,8 @@ Cập nhật: các mốc đã hoàn thành, cách chạy, và việc sắp tới
 - Cần GPU đủ mạnh (RTX 3060) cho trải nghiệm mượt.
 
 ## ⏭️ Sắp tới
-1. ~~Streaming TTS~~ ✅ — Luna đọc từng câu ngay khi nghĩ xong (đã có trong `voice_luna.py`).
-2. **RAG cho Luna** — trả lời kiến thức (nhất là an ninh mạng) dựa trên tài liệu có nguồn, đỡ bịa. ← tiếp theo
-3. **Nhánh "Luna Lite"** — cấu hình nhẹ cho máy yếu (laptop 8GB): model nhỏ hơn + TTS piper, hoặc laptop làm client nối tới Luna trên máy khoẻ.
-4. **Giai đoạn 5 — Di sản** — đưa Luna lên GitHub + tự sao lưu.
+1. ~~Streaming TTS~~ ✅ — Luna đọc từng câu ngay khi nghĩ xong.
+2. ~~RAG cho Luna~~ ✅ — trả lời an ninh mạng dựa trên OWASP/nmap/Metasploit, có trích nguồn, chống bịa bằng ngưỡng điểm.
+3. ~~Giai đoạn 5 — Di sản~~ ✅ — code trên GitHub (`Luna_Backup.bat` để sao lưu). Ký ức riêng (`facts.json`) ở lại máy.
+4. **Bộ cài .exe** — `install.bat` + `installer/luna_setup.iss` (Inno Setup) → `Luna_Setup.exe`. Xem `guides/installer_exe.md`. ← đang hoàn thiện
+5. **Nhánh "Luna Lite"** — cấu hình nhẹ cho máy yếu (laptop 8GB): model nhỏ + giọng piper, hoặc laptop làm client nối tới Luna trên máy khoẻ.
